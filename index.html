@@ -8,7 +8,31 @@
     <title>Recipe Helper</title>
   </head>
   <body>
-    <h1>Find that recipe!</h1>
+    <h1 class="text-2xl text-gray-100 text-center">Find that recipe!</h1>
+    <main class="container">
+      <form action="#">
+        <input
+          type="text"
+          name="recipe"
+          class="input"
+          placeholder="Search for recipes..."
+          title="Example: fettuccine alfredo"
+          required
+        />
+        <div class="btn-group">
+          <button type="submit" title="Search recipe">
+            <ion-icon name="search-outline" size="large"></ion-icon>
+          </button>
+          <button type="button" id="random-recipe" title="Random recipe">
+            <ion-icon name="shuffle" size="large"></ion-icon>
+          </button>
+        </div>
+      </form>
+      <p id="search-text" class="hidden">Search results for: &quot;<span id="search-results"></span>&quot;</p>
+      <section id="meals"></section>
+      <section id="meal"></section>
+    </main>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script type="module" src="main.js"></script>
   </body>
 </html>
