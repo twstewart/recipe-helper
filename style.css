@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@300;500;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex justify-center items-center no-underline border-0 py-2 px-7 align-middle select-none rounded shadow-md font-normal text-center transition hover:shadow-lg focus:outline-none focus:ring-1 focus:ring-offset-transparent focus:ring-offset-1;
+  }
+
+  .link {
+    @apply inline-flex no-underline py-0.5 px-1 rounded font-normal transition-colors focus:outline-none focus:ring-0 focus:ring-offset-transparent focus:ring-offset-1;
+  }
+
+  .input {
+    @apply block h-full w-full px-1.5 py-3 font-normal bg-white border-2 border-solid border-gray-100 appearance-none rounded text-sm transition focus:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-transparent focus:ring-offset-1;
+  }
+
+  .ps {
+    @apply py-11 xs:py-12 sm:py-13 md:py-14 lg:py-15 xl:py-16;
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+.preload * {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
