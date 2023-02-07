@@ -9,9 +9,9 @@
   </head>
   <body class="bg-amber-900 my-10">
     <main class="container">
-      <h1 class="font-display text-4xl text-gray-100 text-center capitalize mb-4">Find that recipe!</h1>
+      <h1 class="font-display text-4xl text-gray-50 text-center capitalize mb-4">Find that recipe!</h1>
       <div class="max-w-lg mx-auto">
-        <form action="#">
+        <form action="#" id="form">
           <input
             type="text"
             name="recipe"
@@ -24,14 +24,16 @@
             <button type="submit" class="btn bg-gray-100 hover:bg-gray-200">
               <ion-icon name="search-outline" size="large"></ion-icon>
             </button>
-            <button type="button" id="random-recipe" class="btn bg-gray-100 hover:bg-gray-200">
+            <button type="button" id="random" class="btn bg-gray-100 hover:bg-gray-200">
               <ion-icon name="shuffle" size="large"></ion-icon>
             </button>
           </div>
         </form>
       </div>
-      <p id="search-text" class="hidden">Search results for: &quot;<span id="search-results"></span>&quot;</p>
-      <section id="meals"></section>
+      <p id="search-text" class="text-2xl text-gray-50 text-center font-semibold mt-4 mb-8 hidden">
+        Search results for: &quot;<span id="search-results"></span>&quot;
+      </p>
+      <section id="meals" class="grid grid-cols-1 gap-4 xs:grid-cols-2 sm:grid-cols-4 md:gap-8"></section>
       <section id="meal"></section>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
