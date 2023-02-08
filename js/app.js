@@ -1,6 +1,7 @@
 import { fetcher } from "./utils";
 
 const form = document.querySelector("#form");
+const randomRecipeBtn = document.querySelector("#random");
 const searchTextEl = document.querySelector("#search-text");
 const searchResultsEl = document.querySelector("#search-results");
 const mealsEl = document.querySelector("#meals");
@@ -8,6 +9,7 @@ const mealEl = document.querySelector("#meal");
 
 form.addEventListener("submit", handleSearchRecipe);
 mealsEl.addEventListener("click", getMealById);
+randomRecipeBtn.addEventListener("click", handleRandomRecipe);
 
 async function handleSearchRecipe(e) {
   e.preventDefault();
@@ -57,6 +59,18 @@ async function getMealById(e) {
     const { meals } = await fetchSingleRecipe(id);
     addMealToDOM(meals[0]);
   }
+}
+
+async function handleRandomRecipe(_e) {
+  const url = "https://www.themealdb.com/api/json/v1/1/random.php";
+
+  mealsEl.innerHTML = null;
+  mealEl.innerHTML = null;
+
+  searchTextEl.classList.add("hidden");
+
+  const data = await fetcher(url);
+  addMealToDOM(data.meals[0]);
 }
 
 function addMealToDOM(meal) {
